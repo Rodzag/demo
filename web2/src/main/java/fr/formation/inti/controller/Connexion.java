@@ -69,7 +69,7 @@ public class Connexion extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/LoginServlet");
 			dispatcher.forward(request, response);
 		}else {
-			color = "red";
+			color = "blue";
 			doGet(request,response);
 		}
 
