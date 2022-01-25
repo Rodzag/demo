@@ -2,12 +2,14 @@ package fr.formation.inti.controller;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class LoginServelet
@@ -65,7 +67,11 @@ public class Connexion extends HttpServlet {
 		String login = request.getParameter("Login");
 		String password = request.getParameter("PassWord");
 		color ="black";
+		HttpSession session = request.getSession();
+		
 		if(("root".equals(login)) && ("123456".equals(password))){
+			session.setAttribute("message", "you are connected");
+			session.setAttribute("dateConnection", new Date());
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/LoginServlet");
 			dispatcher.forward(request, response);
 		}else {
