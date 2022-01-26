@@ -40,7 +40,7 @@ public class Connexion extends HttpServlet {
 				+ "<label style=\"color:"+color+"\" for=\"Login\">Login:</label><br>"
 				+ "<input type=\"text\" id=\"Login\" name=\"Login\"><br>"
 				
-				+ "<label style=\"color:"+color+"\" for=\"PassWord\">Password:</label><br>\r\n"
+				+ "<label style=\"color:"+color +"\" for=\"PassWord\">Password:</label><br>\r\n"
 				+ "<input  type=\"password\" id=\"PassWord\" name=\"PassWord\"><br><br>"
 				
 				+ "<input type=\"submit\" value=\"Submit\">"
@@ -68,10 +68,12 @@ public class Connexion extends HttpServlet {
 		String password = request.getParameter("PassWord");
 		color ="black";
 		HttpSession session = request.getSession();
+		session.setMaxInactiveInterval(30); //seconde
 		
 		if(("root".equals(login)) && ("123456".equals(password))){
 			session.setAttribute("message", "you are connected");
 			session.setAttribute("dateConnection", new Date());
+			//getServletConfig("config",login);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/LoginServlet");
 			dispatcher.forward(request, response);
 		}else {

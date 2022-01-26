@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <display-name>web2</display-name>
+  
+  <listener>
+  <listener-class>fr.formation.inti.controller.filter.ContextListener</listener-class>
+  </listener>
+  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
@@ -13,6 +17,11 @@
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>fr.formation.inti.controller.LoginServlet</servlet-class>
+  </servlet>
+  
+    <servlet>
+    <servlet-name>Index</servlet-name>
+    <servlet-class>src.main.java.webapp.index</servlet-class>
   </servlet>
   
     <servlet>
@@ -34,5 +43,14 @@
     <servlet-name>Connexion</servlet-name>
     <url-pattern>/Connexion</url-pattern>
   </servlet-mapping>
+  
+      <servlet-mapping>
+    <servlet-name>Index</servlet-name>
+    <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  
+ <!-- <session-config>
+<session-timeout>5</session-timeout>
+ </session-config> -->
 
 </web-app>

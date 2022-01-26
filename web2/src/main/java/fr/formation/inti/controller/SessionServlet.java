@@ -34,6 +34,7 @@ public class SessionServlet extends HttpServlet {
 		response.getWriter().append("you are disconnected");
 		HttpSession session = request.getSession();
 		session.invalidate();
+		response.sendRedirect("/logout");
 	}
 
 	/**
