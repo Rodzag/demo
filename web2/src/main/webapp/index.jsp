@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,24 +8,21 @@
 
 <style>
 p {
-	color:green;
+	color: green;
 }
-
 </style>
 </head>
 
 <body>
-<br>
+	<br>
+	<%=new Date()%>
 	<h1>Web2 : APP</h1>
 
 	<p>Pour s'identifier :</p>
 	<a href="Connexion">Connexion</a>
 	<br>
-	<a href="hasError.jsp">Erreur</a>
-	<br>
-	<a href="includeExample.jsp">Include</a>
-	<br>
-	<a href="example.jsp">Random</a>
+	
+	<a href="index.html">Index</a>
 
 
 </body>

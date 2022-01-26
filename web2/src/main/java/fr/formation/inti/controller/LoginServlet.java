@@ -56,7 +56,13 @@ public class LoginServlet extends HttpServlet {
 
 		ServletOutputStream out = response.getOutputStream();
 		out.println("<html>");
-		out.println("<head><title>LoginServlet</title></head>");
+		out.println("<head><style>\r\n"
+				+ "p {\r\n"
+				+ "	color:black;\r\n"
+				+ "}\r\n"
+				+ "\r\n"
+				+ "</style>"
+				+ "<title>LoginServlet</title></head>");
 		out.println("<body>");
 		out.println("<p>hello "+login+"</p>");
 		out.println("<p>you are connected</p>");
