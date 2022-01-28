@@ -11,21 +11,7 @@
 </head>
 
 <body>
-<h2> Some error in page</h2>
-Message : <%= exception.getMessage() %>
-
-<h3>StackTrace</h3>
-<%
-StringWriter sw = new StringWriter();
-PrintWriter pw = new PrintWriter(sw);
-
-exception.printStackTrace(pw);
-out.println("<pre>");
-out.println(sw);
-out.println("</pre>");
-pw.close();
-sw.close();
-%>
+<h1 style="color:red"> Login ou mot de pass incorrect !!!</h1>
 
 </body>
 </html>

@@ -31,12 +31,21 @@
 		Random value =<%=randomInt%></h1>
 	<%
 	}
-	%>
-	
+	%>	
 	<h1> 1+3 =<%=sum(1,3)%> </h1>
 
-
 	<a href="<%=request.getRequestURI()%>">new random</a>
+	
+	
+	
+	<% int nb= (Integer)session.getAttribute("compteur");%>
+	<h1>compteur : <%=nb%> </h1>
+	
+<form action=<%nb=0;%>>
+  <input type="submit" value="zero">
+</form>
+	
+	
 </body>
 
 </html>

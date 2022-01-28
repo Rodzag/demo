@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 public class Connexion extends HttpServlet {
 
 	private String color;
+	public int nb=-1;
 	
 	private static final long serialVersionUID = 1L;
        
@@ -73,6 +74,7 @@ public class Connexion extends HttpServlet {
 		if(("root".equals(login)) && ("123456".equals(password))){
 			session.setAttribute("message", "you are connected");
 			session.setAttribute("dateConnection", new Date());
+			session.setAttribute("compteur", nb);
 			//getServletConfig("config",login);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/LoginServlet");
 			dispatcher.forward(request, response);

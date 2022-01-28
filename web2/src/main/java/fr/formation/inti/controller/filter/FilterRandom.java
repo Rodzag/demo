@@ -12,7 +12,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.logging.Log;
@@ -21,15 +20,16 @@ import org.apache.commons.logging.LogFactory;
 /**
  * Servlet Filter implementation class FilterLog
  */
-@WebFilter("")
-public class FilterLog implements Filter {
-	private static final Log log = LogFactory.getLog(FilterLog.class);
+@WebFilter("/example.jsp")
+public class FilterRandom implements Filter {
+	public int nb;
+	private static final Log log = LogFactory.getLog(FilterRandom.class);
 	private ServletContext context;
 
 	/**
 	 * Default constructor.
 	 */
-	public FilterLog() {
+	public FilterRandom() {
 
 	}
 
@@ -45,25 +45,22 @@ public class FilterLog implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
-		HttpServletResponse res = (HttpServletResponse) response;
 		Enumeration<String> params = req.getParameterNames();
 		while (params.hasMoreElements()) {
 			String name = params.nextElement();
 			String value = request.getParameter(name);
 			this.context.log(req.getRemoteAddr() + " ::Request Params::{" + name + "=" + value + "}");
 		}
-		HttpSession session = req.getSession(false);
-		String uri = req.getRequestURI();
-		this.context.log("Requested Resource :"+uri);
-		if(session == null && !(uri.endsWith("index.jsp")||uri.endsWith("Connexion"))) {
-			this.context.log("Unauthorized access request");
-			res.sendRedirect("index.jsp");
-		}else {
+		
+		HttpSession session = req.getSession();
+
+			session.setAttribute("compteur", nb);
+			nb=nb+1;
 			log.info("doFilter before ");
 			chain.doFilter(request, response);
 			log.info("doFilter after");			
 		}
-	}
+	
 
 	/**
 	 * @see Filter#init(FilterConfig)

@@ -1,4 +1,4 @@
-package fr.formation.inti.controller.filter;
+package fr.formation.inti.controller;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
