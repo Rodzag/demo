@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>gestionExample</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+
+        <servlet>
+    <servlet-name>IdentifServelt</servlet-name>
+    <servlet-class>fr.formation.inti.controller.IdentifServelt</servlet-class>
+  </servlet>
+  
+          <servlet>
+    <servlet-name>ChercheServlet</servlet-name>
+    <servlet-class>fr.formation.inti.controller.ChercheServlet</servlet-class>
+  </servlet>
+  
+          <servlet>
+    <servlet-name>UpServlet</servlet-name>
+    <servlet-class>fr.formation.inti.controller.UpServlet</servlet-class>
+  </servlet>
+  
+          <servlet>
+    <servlet-name>ChangeServlet</servlet-name>
+    <servlet-class>fr.formation.inti.controller.ChangeServlet</servlet-class>
+  </servlet>
+  
+          <servlet>
+    <servlet-name>newEmpServlet</servlet-name>
+    <servlet-class>fr.formation.inti.controller.newEmpServlet</servlet-class>
+  </servlet>
+  
+          <servlet>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>fr.formation.inti.controller.SessionServlet</servlet-class>
+  </servlet>
+  
+          <servlet-mapping>
+    <servlet-name>ChercheServlet</servlet-name>
+    <url-pattern>/ChercheServlet</url-pattern>
+  </servlet-mapping>
+
+          <servlet-mapping>
+    <servlet-name>IdentifServelt</servlet-name>
+    <url-pattern>/IdentifServelt</url-pattern>
+  </servlet-mapping>
+  
+            <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/SessionServlet</url-pattern>
+  </servlet-mapping>
+  
+              <servlet-mapping>
+    <servlet-name>newEmpServlet</servlet-name>
+    <url-pattern>/newEmpServlet</url-pattern>
+  </servlet-mapping>
+  
+                <servlet-mapping>
+    <servlet-name>ChangeServlet</servlet-name>
+    <url-pattern>/ChangeServlet</url-pattern>
+  </servlet-mapping>
+  
+                  <servlet-mapping>
+    <servlet-name>UpServlet</servlet-name>
+    <url-pattern>/UpServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>
