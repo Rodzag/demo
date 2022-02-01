@@ -92,7 +92,7 @@ img {
 
 		<nav class="menu">
 			<section class="categorie">
-				<a href="http://localhost:8080/gestionExample/index.jsp">Accueil</a>
+				<a href="http://localhost:8080/gestionExample/Connexion.jsp">Accueil</a>
 
 			</section>
 			<section class="categorie">

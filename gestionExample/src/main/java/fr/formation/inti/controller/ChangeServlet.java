@@ -27,7 +27,6 @@ public class ChangeServlet extends HttpServlet {
 	 */
 	public ChangeServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**

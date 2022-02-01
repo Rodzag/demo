@@ -45,7 +45,7 @@ public class GenericDaoHibernate<T,I extends Serializable> implements IGenericDa
 			session.persist(u);
 			Integer id = u.getUserId();
 			log.info("persist successful");
-			session.getTransaction().commit();
+			commitTransaction();
 			return id;
 		} catch (RuntimeException re) {
 			log.error("persist failed", re);
@@ -58,7 +58,7 @@ public class GenericDaoHibernate<T,I extends Serializable> implements IGenericDa
 		try {
 			beginTransaction();
 			session.delete(emp);
-			session.getTransaction().commit();
+			commitTransaction();
 			log.info("del successful");
 
 		} catch (RuntimeException re) {
@@ -71,7 +71,9 @@ public class GenericDaoHibernate<T,I extends Serializable> implements IGenericDa
 	@SuppressWarnings("unchecked")
 	public I save(T t) {
 		beginTransaction();
-		return (I) session.save(t);
+		I id = (I) session.save(t);
+		commitTransaction();
+		return (I) id; 
 	}
 
 	public void update(T t) {
@@ -84,22 +86,26 @@ public class GenericDaoHibernate<T,I extends Serializable> implements IGenericDa
 	public void delete(I i) {
 		beginTransaction();
 		session.delete(i);
+		commitTransaction();
 		
 	}
 
 
 	public T findById(I i) {
 		beginTransaction();
-		return (T) session.get(this.type, i);
+		T u = (T) session.get(this.type, i);
+
+		return (T) u;
 	}
 
-
+	
 	@SuppressWarnings("unchecked")
 	public List<T> findAll() {
 		beginTransaction();
 		String hql = "select e from "+this.type.getName()+" e";
 		Query<T> query = session.createQuery(hql);
 		List<T> datas = query.getResultList();
+		commitTransaction();
 		return datas;
 	}
 	
@@ -110,6 +116,7 @@ public class GenericDaoHibernate<T,I extends Serializable> implements IGenericDa
 				+ " or last_name like ('%"+chr+"%') or emp_id like ('%"+chr+"%') or title like('%"+chr+"%') or start_date like('%"+chr+"%')";
 		Query<T> query = session.createQuery(hql);
 		List<T> datas = query.getResultList();
+		commitTransaction();
 		return datas;
 	}
 	

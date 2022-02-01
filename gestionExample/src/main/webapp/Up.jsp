@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -92,7 +93,7 @@ img {
 
 		<nav class="menu">
 			<section class="categorie">
-				<a href="http://localhost:8080/gestionExample/index.jsp">Accueil</a>
+				<a href="http://localhost:8080/gestionExample/Connexion.jsp">Accueil</a>
 
 			</section>
 			<section class="categorie">
@@ -129,20 +130,24 @@ img {
 
 						<form action="/gestionExample/up?i=${id}" method="post">
 
-							<label for="login">Prenom :</label><br> 
-							<input type="text" style="text-align: center" id="firstName" name="firstName" value="${firstName}"><br> 
-							
-							<label for="passWord">Nom :</label><br>
-							<input type="text" id="lastName" name="lastName" style="text-align: center" value="${lastName}"><br>
-							
-							<label for="titre">Titre :</label><br>
-							<input type="text" id="title" name="title" style="text-align: center" value="${title}"><br>
-							
-							<br> <input type="submit" value="Modifier">
+							<label for="login">Prenom :</label><br> <input type="text"
+								style="text-align: center" id="firstName" name="firstName"
+								value="${firstName}"><br> <label for="passWord">Nom
+								:</label><br> <input type="text" id="lastName" name="lastName"
+								style="text-align: center" value="${lastName}"><br>
 
+							<label for="titre">Titre :</label><br> 
+							<input type="text" id="title" name="title" style="text-align: center"value="${title}"><br> 
+							<label for="dept">Departement:</label><br> 
+							<select name="dept" id="dept">
+								<option value="${dept}" style="text-align: center">Par default : ${dept}</option>
+								<c:forEach items="${list}" var="e">
+									<option value="${e.getName()}" style="text-align: center">${e.getName()}</option>
+								</c:forEach>
+							</select> <br> <br> 
+							<input type="submit" value="Modifier">
 
 						</form>
-
 
 					</div>
 				</div>

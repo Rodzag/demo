@@ -28,11 +28,28 @@ public class Employee {
 	private String lastName;
 	@Column(name = "start_date")
 	private Date startDate;
+	
+	@ManyToOne
+	@JoinColumn(name = "dept_id")
+	private Department department;
+
 	@Column(name = "title")
 	private String title;
 	
 	public String getTitle() {
 		return title;
+	}
+
+
+
+	public Department getDepartment() {
+		return department;
+	}
+
+
+
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 
 
@@ -163,8 +180,16 @@ public class Employee {
 		this.startDate = strartDate;
 	}
 
-	public Employee() {
+	public Employee(String firstName, String last_Name, String title, Date strartDate, Department dpt) {
 		super();
+		this.firstName = firstName;
+		this.lastName = last_Name;
+		this.title=title;
+		this.startDate = strartDate;
+		this.department = dpt;
+	}
+	
+	public Employee() {
 	}
 
 }

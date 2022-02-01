@@ -1,7 +1,6 @@
 package fr.formation.inti.controller;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;

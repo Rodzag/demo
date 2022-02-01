@@ -92,7 +92,7 @@ img {
 
 		<nav class="menu">
 			<section class="categorie">
-				<a href="http://localhost:8080/gestionExample/index.jsp">Accueil</a>
+				<a href="http://localhost:8080/gestionExample/Connexion.jsp">Accueil</a>
 
 			</section>
 			<section class="categorie">
@@ -138,6 +138,17 @@ img {
 							<label for="titre">Titre :</label><br>
 							<input type="text" id="title" name="title" style="text-align: center"><br>
 							
+							<label for="titre">Departement :</label><br> 
+							<select name="dept" id="dept">
+								<option value="Aucun" style="text-align: center">Choisir un departement</option>
+								<option value="Operations" style="text-align: center">Operations</option>
+								<option value="Loans" style="text-align: center">Loans</option>
+								<option value="Administration" style="text-align: center">Administration</option>
+								<option value="IT" style="text-align: center">IT</option>
+								<option value="JavaEE" style="text-align: center">JavaEE</option>
+								<option value="developpement" style="text-align: center">developpement</option>
+							</select> 
+							<br>
 							<br> <input type="submit" value="Ajouter">
 							
 							<h3>${Message }</h3>

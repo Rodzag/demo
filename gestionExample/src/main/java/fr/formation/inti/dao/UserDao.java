@@ -7,8 +7,8 @@ import fr.formation.inti.entity.User;
 public class UserDao extends GenericDaoHibernate<User, Integer> implements IUserDao {
 
 	public User findByLoginAndPassword(String login, String password) {
-		beginTransaction();
 		try {
+			beginTransaction();
 			
 		Query<User> query = session.createQuery(
 				"from " + User.class.getName() + " u where u.login= :login and u.password = :pass", User.class);

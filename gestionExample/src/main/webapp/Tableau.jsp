@@ -188,6 +188,7 @@ cursor: pointer;
 
 
 </style>
+<script src="https://kit.fontawesome.com/86a95d9f82.js"></script>
 </head>
 <body>
 	<header>
@@ -200,7 +201,7 @@ cursor: pointer;
 
 		<nav class="menu">
 			<section class="categorie">
-				<a href="http://localhost:8080/gestionExample/index.jsp">Accueil</a>
+				<a href="http://localhost:8080/gestionExample/Connexion.jsp">Accueil</a>
 
 			</section>
 			<section class="categorie">
@@ -211,6 +212,7 @@ cursor: pointer;
 					<li><a href="http://localhost:8080/gestionExample/new">Afficher
 							tous les employes</a></li>
 				</ul>
+				
 			</section>
 			<section class="categorie">
 			<form action="http://localhost:8080/gestionExample/cherche">
@@ -237,30 +239,32 @@ cursor: pointer;
 				<div class="col-xl-9 mx-auto">
 					<div class="cta-inner bg-faded text-center rounded">
 
-						<h2>Liste des employees :</h2>
+						<h2>Liste des employes :</h2>
 						<h4>${Message}</h4>
 						<br>
 						<table>
 							<tr>
-								<th>Identifiant</th>
 								<th>Prenom</th>
 								<th>Nom</th>
 								<th>Titre</th>
+								<th>Departement</th>
 								<th>Date de debut</th>
 								<th>Modifier</th>
 								<th>Supprimer</th>
 							</tr>
 							<c:forEach items="${list}" var="e">
 								<tr>
-									<td>${e.empId}</td>
 									<td>${e.firstName}</td>
 									<td>${e.lastName}</td>
 									<td>${e.title}</td>
+									<td>${e.department.getName()}</td>
 									<td><fmt:formatDate value="${e.startDate}" pattern="yyyy-MM-dd"/></td>
 
-									<td><a href="http://localhost:8080/gestionExample/up?i=${e.empId}"><img class="img2" src="http://localhost:8080/gestionExample/assets/img/50501423-crayon-avec-icône-de-bande-dessinée-de-gomme-isolé-sur-un-fond-blanc.jpeg"></a></td>
-									<td><a href="http://localhost:8080/gestionExample/change?i=${e.empId}&m=del"><img class="img2"  onclick="return confirm('Are you sure you want to delete?')" src="http://localhost:8080/gestionExample/assets/img/73060436-élément-de-signe-de-croix-icône-de-grunge-x-rouge-isolé-sur-fond-blanc-mark-design-graphique-bouton-.jpeg"></a></td>
-									
+									<td><a href="http://localhost:8080/gestionExample/up?i=${e.empId}">
+									<i class="fas fa-edit" style="height: 40px; width:40px; margin-top: 20px"></i></a></td>
+									<td><a href="http://localhost:8080/gestionExample/change?i=${e.empId}&m=del">
+									<i class="fas fa-trash-alt" style="height: 40px; width:40px; margin-top: 20px" onclick="return confirm('Are you sure you want to delete?')"></i></a></td>
+
 
 								</tr>
 							</c:forEach>

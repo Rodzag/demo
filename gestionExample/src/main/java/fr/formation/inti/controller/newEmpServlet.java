@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import fr.formation.inti.dao.DepartmentDao;
 import fr.formation.inti.dao.EmployeeDao;
+import fr.formation.inti.entity.Department;
 import fr.formation.inti.entity.Employee;
 
 /**
@@ -42,7 +44,7 @@ public class newEmpServlet extends HttpServlet {
 		List<Employee> list=dao.findAll();
 		for (Employee e : list) {
 			log.info(e);
-			
+
 		}
 		request.setAttribute("list", list);
 		String msg = (String) request.getAttribute("Message");
@@ -65,15 +67,19 @@ public class newEmpServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		EmployeeDao dao = new EmployeeDao();
+		DepartmentDao daod = new DepartmentDao();
+		
 		String fn = request.getParameter("firstName");
 		String ln = request.getParameter("lastName");
 		String title = request.getParameter("title");	
         Date date = new Date();
+        String dept = request.getParameter("dept");
+        Department dpt = daod.findByName(dept);
+        log.info(dpt);
 
-		Employee emp = new Employee(fn,ln,date, title);
+		Employee emp = new Employee(fn,ln, title, date, dpt);
 		
 		int id = (int) dao.save(emp);
-		dao.commitTransaction();
 		request.setAttribute("Message", "employe numero : "+id+" bien enregistré");
 		doGet(request, response);
 
