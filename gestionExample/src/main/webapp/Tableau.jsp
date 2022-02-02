@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,13 +35,12 @@ img {
 	margin-left: 120px;
 }
 
-.img2{	max-width: 40px;
+.img2 {
+	max-width: 40px;
 	max-height: 40px;
-margin-bottom: 5px;
-margin-top:5px;
-margin-left: 25px;
-
-
+	margin-bottom: 5px;
+	margin-top: 5px;
+	margin-left: 25px;
 }
 
 .menu {
@@ -72,14 +71,14 @@ margin-left: 25px;
 	transition: 1s;
 }
 
-table{
-border:1px solid black;
-padding: 0px;
-width: 100%;
+table {
+	border: 1px solid black;
+	padding: 0px;
+	width: 100%;
 }
 
-th, td{
-border:1px solid black;
+th, td {
+	border: 1px solid black;
 }
 
 .menu h3, .menu a {
@@ -104,89 +103,90 @@ border:1px solid black;
 }
 
 .popup {
-float: right;
+	float: right;
 }
 
 ---------------------
 
+
+
 .open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
+	background-color: #555;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
+	position: fixed;
+	bottom: 23px;
+	right: 28px;
+	width: 280px;
 }
 
 /* The popup form - hidden by default */
 .form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
+	display: none;
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	border: 3px solid #f1f1f1;
+	z-index: 9;
 }
 
 /* Add styles to the form container */
 .form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
+	max-width: 300px;
+	padding: 10px;
+	background-color: white;
 }
 
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;
 }
 
 /* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
+.form-container input[type=text]:focus, .form-container input[type=password]:focus
+	{
+	background-color: #ddd;
+	outline: none;
 }
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
+	background-color: #04AA6D;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom: 10px;
+	opacity: 0.8;
 }
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {
-  background-color: red;
+	background-color: red;
 }
 
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
-  opacity: 1;
+	opacity: 1;
 }
 
-.croix{
-background-image:url(73060436-élément-de-signe-de-croix-icône-de-grunge-x-rouge-isolé-sur-fond-blanc-mark-design-graphique-bouton-.jpeg);
-border:none;
-background-color:transparent;
-width: 40px; /* largeur à spécifier */
-height: 40px; /* longueur à spécifier */
-cursor: pointer;
+.croix {
+	background-image:
+		url(73060436-élément-de-signe-de-croix-icône-de-grunge-x-rouge-isolé-sur-fond-blanc-mark-design-graphique-bouton-.jpeg);
+	border: none;
+	background-color: transparent;
+	width: 40px; /* largeur à spécifier */
+	height: 40px; /* longueur à spécifier */
+	cursor: pointer;
 }
-
-
-
 </style>
 <script src="https://kit.fontawesome.com/86a95d9f82.js"></script>
 </head>
@@ -207,22 +207,21 @@ cursor: pointer;
 			<section class="categorie">
 				<a href="">Gestion des employes</a>
 				<ul>
-					<li><a href="http://localhost:8080/gestionExample/New.jsp">Ajouter
-							un employe</a></li>
-					<li><a href="http://localhost:8080/gestionExample/new">Afficher
-							tous les employes</a></li>
+					<li><a href="http://localhost:8080/gestionExample/New.jsp">Ajouter un employe</a></li>
+					<li><a href="http://localhost:8080/gestionExample/new">Afficher tous les employes</a></li>
 				</ul>
-				
-			</section>
-			<section class="categorie">
-			<form action="http://localhost:8080/gestionExample/cherche">
-				<input type="text" id="text" style="width: 200px; margin-top:5px; text-align: center" name="text"/>
-				<input type="submit" value="Rechercher"/>
-			</form>
 
 			</section>
 			<section class="categorie">
-				<a href="http://localhost:8080/gestionExample/logout"> <img 
+				<form action="http://localhost:8080/gestionExample/cherche">
+					<input type="text" id="text"
+						style="width: 200px; margin-top: 5px; text-align: center"
+						name="text" /> <input type="submit" value="Rechercher" />
+				</form>
+
+			</section>
+			<section class="categorie">
+				<a href="http://localhost:8080/gestionExample/logout"> <img
 					src="http://localhost:8080/gestionExample/assets/img/kisspng-abmeldung-button-icon-shut-cliparts-5a89cae38f35c7.1285697615189798115866.png"></a>
 
 			</section>
@@ -232,7 +231,7 @@ cursor: pointer;
 		</div>
 	</section>
 
-	
+
 	<section class="page-section cta">
 		<div class="container">
 			<div class="row">
@@ -258,12 +257,20 @@ cursor: pointer;
 									<td>${e.lastName}</td>
 									<td>${e.title}</td>
 									<td>${e.department.getName()}</td>
-									<td><fmt:formatDate value="${e.startDate}" pattern="yyyy-MM-dd"/></td>
+									<td><fmt:formatDate value="${e.startDate}"
+											pattern="yyyy-MM-dd" /></td>
 
-									<td><a href="http://localhost:8080/gestionExample/up?i=${e.empId}">
-									<i class="fas fa-edit" style="height: 40px; width:40px; margin-top: 20px"></i></a></td>
-									<td><a href="http://localhost:8080/gestionExample/change?i=${e.empId}&m=del">
-									<i class="fas fa-trash-alt" style="height: 40px; width:40px; margin-top: 20px" onclick="return confirm('Are you sure you want to delete?')"></i></a></td>
+									<td><a
+										href="http://localhost:8080/gestionExample/up?i=${e.empId}">
+											<i class="fas fa-edit"
+											style="height: 40px; width: 40px; margin-top: 20px"></i>
+									</a></td>
+									<td><a
+										href="http://localhost:8080/gestionExample/change?i=${e.empId}&m=del">
+											<i class="fas fa-trash-alt"
+											style="height: 40px; width: 40px; margin-top: 20px"
+											onclick="return confirm('Are you sure you want to delete?')"></i>
+									</a></td>
 
 
 								</tr>
@@ -281,7 +288,7 @@ cursor: pointer;
 		</div>
 	</footer>
 	<!-- Bootstrap core JS-->
-	
+
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->
@@ -289,22 +296,22 @@ cursor: pointer;
 
 
 
-<script>
-function openForm(id) {
-  document.getElementById("myForm").style.display = "block";
-}
+	<script>
+		function openForm(id) {
+			document.getElementById("myForm").style.display = "block";
+		}
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
+		function closeForm() {
+			document.getElementById("myForm").style.display = "none";
+		}
 
-function openFormDel() {
-	  document.getElementById("myFormDel").style.display = "block";
-	}
+		function openFormDel() {
+			document.getElementById("myFormDel").style.display = "block";
+		}
 
-	function closeFormDel() {
-	  document.getElementById("myFormDel").style.display = "none";
-	}
-</script>
+		function closeFormDel() {
+			document.getElementById("myFormDel").style.display = "none";
+		}
+	</script>
 </body>
 </html>

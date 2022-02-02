@@ -34,7 +34,8 @@ public class SessionServlet extends HttpServlet {
 		response.getWriter().append("you are disconnected");
 		HttpSession session = request.getSession(false);
 		session.invalidate();
-		response.sendRedirect("http://localhost:8080/gestionExample/Connexion.jsp");
+		
+		response.sendRedirect("http://localhost:8080/gestionExample/Filter");
 	}
 
 	/**

@@ -49,6 +49,12 @@ public class FilterLog implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
 	
+		 res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+		 res.setHeader("Pragma", "no-cache");
+		 res.setDateHeader("Expires", 0); // Proxies.
+
+
+			
 		HttpSession session = req.getSession(false);
 		Enumeration<String> params = req.getParameterNames();
 		while (params.hasMoreElements()) {

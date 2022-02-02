@@ -40,6 +40,16 @@
     <servlet-class>fr.formation.inti.controller.SessionServlet</servlet-class>
   </servlet>
   
+            <servlet>
+    <servlet-name>FilterLog</servlet-name>
+    <servlet-class>fr.formation.inti.controller.filter.FilterLog</servlet-class>
+  </servlet>
+  
+            <servlet-mapping>
+    <servlet-name>FilterLog</servlet-name>
+    <url-pattern>/FilterLog</url-pattern>
+  </servlet-mapping>
+  
           <servlet-mapping>
     <servlet-name>ChercheServlet</servlet-name>
     <url-pattern>/ChercheServlet</url-pattern>
