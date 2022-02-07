@@ -10,11 +10,14 @@ import org.springframework.stereotype.Service;
 import fr.formation.inti.dao.IEmployeeDao;
 import fr.formation.inti.entity.Employee;
 
+
+
 @Service
 public class EmployeeService implements IEmployeeService{
 	private final Log log = LogFactory.getLog(EmployeeService.class);
 
 	@Autowired
+	//@Qualifier
 	private IEmployeeDao dao;
 	
 	public EmployeeService() {
@@ -48,8 +51,18 @@ public class EmployeeService implements IEmployeeService{
 	public List<Employee> findAll() {
 
 		List<Employee> list = dao.findAll();
+		dao.close();
 
 		return list;
 	}
 
+	public IEmployeeDao getDao() {
+		return dao;
+	}
+
+	public void setDao(IEmployeeDao dao) {
+		this.dao = dao;
+	}
+
+	
 }

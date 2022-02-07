@@ -8,9 +8,14 @@ import fr.formation.inti.entity.Employee;
 
 @Repository
 public class EmployeeDao extends GenericDaoHibernate<Employee, Integer> implements IEmployeeDao {
-	private final Log log =LogFactory.getLog(EmployeeDao.class);
+	private final static Log log =LogFactory.getLog(EmployeeDao.class);
 	
 	public EmployeeDao() {
 		log.info("---------> create new employeeDao");
+	}
+	
+	public static EmployeeDao createInstance() {
+		log.info("--------------> create new EmpoyeeDao by factory-method");
+		return new EmployeeDao();
 	}
 }
