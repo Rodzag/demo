@@ -119,7 +119,7 @@ public class GenericDaoHibernate<T,I extends Serializable> implements IGenericDa
 		commitTransaction();
 		return datas;
 	}
-	
+
 	public void beginTransaction() {
 		if(!session.isOpen())
 			session = sf.openSession();
