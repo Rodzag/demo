@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <bean id="daoEmployee" class="fr.formation.inti.dao.EmployeeDao"></bean>
+   <!--factory-method="createInstance"-->
+	<bean id="serviceEmployee" class="fr.formation.inti.service.EmployeeService" autowire="byType">
+	<!--  <property name="dao" ref="daoEmployee"></property>-->
+<!--	<constructor-arg name="dao" ref="daoEmployee"></constructor-arg>-->
+<!--	<property name="message" value="example inject value"></property>-->
+	
+	</bean>
+	
+</beans>
