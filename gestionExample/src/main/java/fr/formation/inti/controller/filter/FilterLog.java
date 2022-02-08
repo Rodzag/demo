@@ -10,7 +10,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -23,7 +22,7 @@ import fr.formation.inti.entity.User;
 /**
  * Servlet Filter implementation class FilterLog
  */
-@WebFilter("/*")
+//@WebFilter("/*")
 public class FilterLog implements Filter {
 	private static final Log log = LogFactory.getLog(FilterLog.class);
 	private ServletContext context;

@@ -9,7 +9,7 @@
     <link href="css/style.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <title>Examples Servlet</title>
+    <title>Example MVC</title>
     <style>
     
     </style>
@@ -19,7 +19,7 @@
 <div class="sidenav">
          <div class="login-main-text">
             <h2>Application<br> JAVA EE</h2>
-            <p>Example Servlet.</p>
+            <p>${message}</p>
             <br>
             <%= new Date() %>
          </div>
