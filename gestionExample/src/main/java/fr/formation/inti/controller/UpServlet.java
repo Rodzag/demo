@@ -23,6 +23,7 @@ import fr.formation.inti.entity.Employee;
 @WebServlet("/up")
 public class UpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	@SuppressWarnings("unused")
 	private static final Log log = LogFactory.getLog(UpServlet.class);
 	/**
 	 * @see HttpServlet#HttpServlet()

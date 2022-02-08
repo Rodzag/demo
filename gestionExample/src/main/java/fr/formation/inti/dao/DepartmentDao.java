@@ -12,8 +12,8 @@ public class DepartmentDao extends GenericDaoHibernate<Department, Integer> impl
 	@Override
 	public Department findByName(String name) {
 		try {
-			beginTransaction();
-			Query<Department> query = session.createQuery(
+
+			Query<Department> query = getCurrentSession().createQuery(
 					"from " + Department.class.getName() + " d where d.name= :name", Department.class);
 			query.setParameter("name", name);
 

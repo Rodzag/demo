@@ -27,10 +27,11 @@ public class AppMain {
 
 		log.info("-------------> bean service"+service);
 		List<Employee> employees = service.findAll();
+		employees.forEach(log::info);
 		
-		for (Employee e : employees) {
-			log.info("--------->"+e);
-		}
+//		for (Employee e : employees) {
+//			log.info("--------->"+e);
+//		}
 		
 		context.close();
 	}

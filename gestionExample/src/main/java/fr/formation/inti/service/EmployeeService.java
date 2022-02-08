@@ -8,14 +8,16 @@ import javax.annotation.PreDestroy;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import fr.formation.inti.dao.IEmployeeDao;
 import fr.formation.inti.entity.Employee;
 
 
 
-@Repository
+@Service
+@Transactional
 public class EmployeeService implements IEmployeeService{
 	private final Log log = LogFactory.getLog(EmployeeService.class);
 
@@ -100,7 +102,6 @@ public class EmployeeService implements IEmployeeService{
 		log.info("------------ init :  @preDestroy destroy service -----------");
 		if(dao !=null) {
 			log.info("------------ dao :  @preDestroy destroy dao -----------");
-			dao.close();
 		}
 	}
 }
