@@ -82,10 +82,14 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	@Override
 	public String toString() {
-		return login+"   [ userid = "+userId+" ]";
+		return "User [userId=" + userId + ", login=" + login + ", password=" + password + ", emp=" + emp
+				+ ", connectionNumber=" + connectionNumber + "]";
 	}
+
+	
 	
 	
 	

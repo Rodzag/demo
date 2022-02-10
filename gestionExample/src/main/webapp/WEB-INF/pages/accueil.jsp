@@ -1,9 +1,8 @@
 <%@page import="java.util.Date"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <!DOCTYPE html>
-<html lang="java">
+<html lang="fr">
 
 <head>
 
@@ -16,7 +15,6 @@
 <title>Example MVC</title>
 <style>
 </style>
-
 </head>
 
 <body>
@@ -28,33 +26,21 @@
 			<p>SRING MVC</p>
 
 			<br>
-			<%= new Date() %>
+			<%=new Date()%>
 		</div>
 	</div>
-	<div class="main" style="margin-top:-200px">
+	<div class="main" style="margin-top: -200px">
 		<div class="col-md-6 col-sm-12">
 			<div class="login-form">
-
+        
         <br>
 
         <a href="?lang=en"><img src="${pageContext.request.contextPath}/img/en.png" style="width: 60px;height: 70px"/></a>
         <a href="?lang=fr"><img src="${pageContext.request.contextPath}/img/fr.jpg" style="width: 50px;height: 40px"/> </a>
         
         <br>
-
-				<h2><s:message code="label.titre"></s:message></h2>
-				<br>
-
-				<form action="index" method="post">
-					<label for="login"><s:message code="label.login"></s:message></label><br> 
-					<input type="text" name="login"><br><br> 
-					<label for="passWord"><s:message code="label.pass"></s:message> </label><br> 
-					<input type="password" name="passWord"><br>
-					<br> <input type="submit" value=<s:message code="label.titre"></s:message>>
-
-				</form>
-				<h4>${message}</h4>
-				<br>
+				
+				<h1><s:message code="label.welcome"></s:message> - ${log}</h1>
 
 			</div>
 		</div>
