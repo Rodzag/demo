@@ -6,6 +6,7 @@ import fr.formation.inti.entity.User;
 
 public class UserDao extends GenericDaoHibernate<User, Integer> implements IUserDao {
 
+	@Override
 	public User findByLoginAndPassword(String login, String password) {
 		try {
 

@@ -8,16 +8,20 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 //Table base de donnée   T_User
 @Entity
 @Table(name="user")
 public class User {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_user")
 	private Integer userId;
+	@Size(min=1)
 	private String login;
+	@Size(min=1)
 	private String password;
 	@OneToOne
 	@JoinColumn(name = "emp_id")
@@ -85,9 +89,10 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", login=" + login + ", password=" + password + ", emp=" + emp
-				+ ", connectionNumber=" + connectionNumber + "]";
+		return "User [login=" + login + "]";
 	}
+
+
 
 	
 	

@@ -4,6 +4,9 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.validation.Constraint;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;  
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,14 +21,21 @@ import javax.persistence.Table;
 @Table(name = "employee")
 public class Employee {
 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "emp_id")
 	private int empId;
+	
+	@Size(min=1, max=10) 
 	@Column(name = "first_name")
 	private String firstName;
+	
+	@Size(min=1, max=10) 
 	@Column(name = "last_name")
 	private String lastName;
+	
+	@NotNull
 	@Column(name = "start_date")
 	private Date startDate;
 	
@@ -33,9 +43,11 @@ public class Employee {
 	@JoinColumn(name = "dept_id")
 	private Department department;
 
+	@Size(min=1, max=10) 
 	@Column(name = "title")
 	private String title;
 	
+	 
 	public String getTitle() {
 		return title;
 	}
@@ -166,11 +178,19 @@ public class Employee {
 		this.startDate = strartDate;
 	}
 
+
+
+
+
+
+
 	@Override
 	public String toString() {
 		return "Employee [empId=" + empId + ", firstName=" + firstName + ", lastName=" + lastName + ", startDate="
-				+ startDate + "]";
+				+ startDate + ", title=" + title + "]";
 	}
+
+
 
 	public Employee(int empId, String firstName, String last_Name, Date strartDate) {
 		super();

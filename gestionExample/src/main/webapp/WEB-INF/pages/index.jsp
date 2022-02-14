@@ -1,6 +1,9 @@
 <%@page import="java.util.Date"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="sf"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="s"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <!DOCTYPE html>
 <html lang="java">
@@ -15,6 +18,17 @@
 
 <title>Example MVC</title>
 <style>
+
+.label1
+{
+
+display: inline-block; 
+width: 120px;
+
+}
+
+.error{color:red}  
+
 </style>
 
 </head>
@@ -41,22 +55,29 @@
         <a href="?lang=fr"><img src="${pageContext.request.contextPath}/img/fr.jpg" style="width: 50px;height: 40px"/> </a>
         
         <br>
-
 				<h2><s:message code="label.titre"></s:message></h2>
 				<br>
 
-				<form action="index" method="post">
-					<label for="login"><s:message code="label.login"></s:message></label><br> 
-					<input type="text" name="login"><br><br> 
-					<label for="passWord"><s:message code="label.pass"></s:message> </label><br> 
-					<input type="password" name="passWord"><br>
-					<br> <input type="submit" value=<s:message code="label.titre"></s:message>>
+				<sf:form action="index" method="POST" modelAttribute="user">
+						<sf:label class="label1" path="login"><s:message code="label.login"></s:message></sf:label>
+						<sf:input  type="text" path="login" />
+						<sf:errors path="login" cssClass="error"/>
+						<br>
+						
+						<sf:label class="label1" path="password"><s:message code="label.pass"></s:message></sf:label>
+						<sf:input  path="password" type="password" />
+						<sf:errors path="password" cssClass="error"/>
+						<br>
+					<br> 
+					<input type="submit" value=<s:message code="label.titre"></s:message>>
 
-				</form>
+				</sf:form>
 				<h4>${message}</h4>
 				<br>
-
 			</div>
+			
+			
+
 		</div>
 	</div>
 </body>
